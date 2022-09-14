@@ -17,15 +17,15 @@
 
 # PLACES
 
-## Restaurants
+Restaurants
 | NAME | CITY | STATE | CUISINE | PICTURE |
 | ---- | ---- | ----- | ------- | ------- |
 
 # Planning
 
-## USer Stores
+User Stories
 -user stories goes her
-# Wireframes
+Wireframes
 -user stories goes here 
 
 REST-Rant is an app where users can review restaurants.
