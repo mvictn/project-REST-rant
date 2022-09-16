@@ -2,3 +2,14 @@ h1{
     text-align: center;
     color: cornflowerblue;
 }
+.col-sm-6{
+    width: 10%;
+    justify-content: center;
+    display: flex;
+}
+
+img{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
