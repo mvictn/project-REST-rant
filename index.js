@@ -17,4 +17,7 @@ app.get('*', (req, res) => {
   res.render('error404')
 })
 
+app.use(express.urlencoded({ extended: true }))
+
+
 app.listen(process.env.PORT)
