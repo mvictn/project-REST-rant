@@ -1,4 +1,4 @@
-module.export = [{
+module.exports = [{
 name: 'H-Thai-ML',
 city: 'Seattle',
 state: 'WA',
