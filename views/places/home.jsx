@@ -1,23 +1,23 @@
 const React = require('react')
 const Def = require('../default')
 
-function home(){
-    return(
-      <Def>
+function home () {
+    return (
+    <Def>
         <main>
-          <h1>HOME</h1>
-          <div>
-              <img src="/images/chia-fruit-drink.jpg" alt="Chia Fruit Shake" width ="50%"/>
+            <h1>REST-Rant</h1>
             <div>
-              Photo by <a href="https://unsplash.com/@brookelark?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Brooke Lark</a> on <a href="https://unsplash.com/s/photos/food-free?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+                <div>
+                <img src="/images/ChiaFruit.jpg" alt="Chia Fruit Shake" width="40%" />
+                <span>Photo by <a href="https://unsplash.com/@cravethebenefits">Brenda Godinez</a> on <a href="//unsplash.com/photos/MsTOg6rhRVk">Unsplash</a></span>
+                </div>
             </div>
-          </div>
-          <a href="/places">
-            <button className="btn btn-primary">Places Page</button>
-          </a>
+            <a href="/places">
+                <button className="btn btn-primary">Places Page</button>
+            </a>
         </main>
-      </Def>
+    </Def>
     )
 }
-
+ 
 module.exports = home
