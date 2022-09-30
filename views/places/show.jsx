@@ -11,6 +11,9 @@ function show (data) {
                 <div className="row">
                     <div className="col-sm-6" >
                         <img id="showBorder" src={data.place.pic} alt={data.place.name} width="80%" />
+                        <h3>
+                            Located in {data.place.city}, {data.place.state}
+                        </h3>
                     </div>
                      <div className="col-sm-6">  
                         <h2>Rating</h2>
@@ -18,6 +21,12 @@ function show (data) {
                         <p>
                             Located in {data.place.city}, {data.place.state}
                         </p>
+                        <h3>
+                                {data.place.showEstablished()}
+                            </h3>  
+                            <h4>
+                                Serving {data.place.cuisines}
+                            </h4>
                     </div>
                     <div>
                         <h1>Comments</h1>
