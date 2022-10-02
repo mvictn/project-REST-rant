@@ -45,31 +45,17 @@ router.get('/new', (req, res) => {
 
 //show
 router.get('/:id', (req, res) => {
-  db.Place.findById(req.params.id)
-  .then(place => {
-    res.render('places/show', { place })
-  })
-  .catch(err => {
-    console.log('err', err)
-    res.render('error404')
-  })
-
+  db.Place.findOne({ _id: req.params.id })
+      .populate('comments')
+      .then(place => {
+          console.log(place.comments)
+          res.render('places/show', { place })
+      })
+      .catch(err => {
+          console.log('err', err)
+          res.render('error404')
+      })
 })
-
-//edit place
-router.put('/:id', (req, res) => {
-  db.Place.findByIdAndUpdate(req.params.id, req.body)
-  .then(() => {
-    res.redirect(`/places/${req.params.id}`)
-  })
-  .catch(err => {
-    res.render('error404')
-  })
-})
-
-//router.delete('/:id', (req, res) => {
-//  res.send('DELETE /places/:id stub')
-//})
 
 //edit
 router.get('/:id/edit', (req, res) =>{
@@ -104,6 +90,18 @@ router.post('/:id/comment', (req, res) => {
       res.render('error404')
   })
 })
+// comment delete
+  router.delete('/:id/comment/:commentId', (req, res) => {
+    db.Commment.findByIdAndDelete(req.params.commentId)  
+          .then(() => {
+              console.log('Success')
+              res.redirect(`/places/${req.params.id}`)
+          })
+          .catch(err => {
+              console.log('err', err)
+              res.render('error404')
+          })
+  })
 
 //delete
 router.delete('/:id', (req, res) => {
@@ -116,5 +114,9 @@ router.delete('/:id', (req, res) => {
     res.render('error404')
   })
 })
+
+//router.delete('/:id', (req, res) => {
+//  res.send('DELETE /places/:id stub')
+//})
 
 module.exports = router
